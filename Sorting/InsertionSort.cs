@@ -3,9 +3,13 @@
     public class InsertionSort : Sorting
     {
         /// <summary>
-        /// Min: O(n) When list is already sorted
+        /// Comparison based sort
+        /// Min: O(n) When list is already sorted no swaps are required.
         /// Max: O(n pow 2).
-        /// It is by nature adaptive and stable.
+        /// It is by nature adaptive and it is stable.
+        /// Insertion sort is best for linked list as we have to just change the pointers
+        /// while inserting. It is not used for arrays generally.
+        /// K passes are not beneficial as results will be sorted after all passes.
         /// </summary>
         /// <param name="arr"></param>
         /// <returns></returns>
@@ -23,7 +27,5 @@
             }
             return arr;
         }
-
-
     }
 }

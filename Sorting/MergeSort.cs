@@ -1,9 +1,14 @@
-﻿using System;
-
-namespace Sorting
+﻿namespace Sorting
 {
     class MergeSort : Sorting
     {
+        /// <summary>
+        /// Comparison based sort and uses extra space
+        /// Uses m way merging
+        /// O(n log n)
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
         public override int[] Sort(int[] arr)
         {
             int pass, low, mid, high = 0;
@@ -13,7 +18,7 @@ namespace Sorting
                 {
                     low = index;
                     high = index + pass - 1;
-                    mid = Convert.ToInt32(Math.Floor((double)(low + high) / 2));
+                    mid = (low + high) / 2;
                     Merge(ref arr, low, mid, high);
                 }
             }
@@ -22,34 +27,41 @@ namespace Sorting
             return arr;
         }
 
-        private void Merge(ref int[] arr, int low, int mid, int high)
+        private static void Merge(ref int[] arr, int low, int mid, int high)
         {
             int index = low;
             int i = low;
             int j = mid + 1;
-            int[] newArr = new int[arr.Length];
+            int[] arr2 = new int[arr.Length];
+
             while (i <= mid && j <= high)
             {
                 if (arr[i] < arr[j])
-                    newArr[index++] = arr[i++];
+                    arr2[index++] = arr[i++];
                 else
-                    newArr[index++] = arr[j++];
+                    arr2[index++] = arr[j++];
             }
+
             while (i <= mid)
-                newArr[index++] = arr[i++];
+                arr2[index++] = arr[i++];
             while (j <= high)
-                newArr[index++] = arr[j++];
+                arr2[index++] = arr[j++];
 
             for (int start = low; start <= high; start++)
-                arr[start] = newArr[start];
+                arr[start] = arr2[start];
         }
 
+        /// <summary>
+        /// O(n log n)
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="low"></param>
+        /// <param name="high"></param>
         public void RecursiveMergeSort(ref int[] arr, int low, int high)
         {
-            int mid = 0;
             if (low < high)
             {
-                mid = (low + high) / 2;
+                int mid = (low + high) / 2;
                 RecursiveMergeSort(ref arr, low, mid);
                 RecursiveMergeSort(ref arr, mid + 1, high);
                 Merge(ref arr, low, mid, high);

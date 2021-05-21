@@ -6,6 +6,7 @@ namespace Sorting
     public class RadixSort : Sorting
     {
         /// <summary>
+        /// Index based sort
         /// O(n)
         /// </summary>
         /// <param name="arr"></param>
@@ -25,7 +26,7 @@ namespace Sorting
             int digitCount = 0;
             while (max > 0)
             {
-                max = max / 10;
+                max /= 10;
                 digitCount++;
             }
 
@@ -53,7 +54,6 @@ namespace Sorting
                 }
                 pass++;
             }
-
             return arr;
         }
     }

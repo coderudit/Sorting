@@ -3,9 +3,10 @@
     public class SelectionSort : Sorting
     {
         /// <summary>
+        /// Comparison based sort
         /// Min: O(n) When list is already sorted
         /// Max: O(n pow 2).
-        /// It is by nature adaptive and stable.
+        /// It is by neither adaptive nor stable.
         /// </summary>
         /// <param name="arr"></param>
         /// <returns></returns>

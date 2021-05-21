@@ -51,11 +51,18 @@ namespace Sorting
             //binSort.Print(sortedArray);
             #endregion
 
-            #region Bin/Bucket Sort
-            int[] arr2 = new int[] { 237, 146, 259, 348, 152, 163, 235, 48, 36, 62 };
-            var radixSort = new RadixSort();
-            var sortedArray = radixSort.Sort(arr2);
-            radixSort.Print(sortedArray);
+            #region Radix Sort
+            //int[] arr2 = new int[] { 237, 146, 259, 348, 152, 163, 235, 48, 36, 62 };
+            //var radixSort = new RadixSort();
+            //var sortedArray = radixSort.Sort(arr2);
+            //radixSort.Print(sortedArray);
+            #endregion
+
+            #region Shell Sort
+            int[] arr2 = new int[] { 9, 5, 16, 8, 13, 6, 12, 10, 4, 2, 3 };
+            var shellSort = new ShellSort();
+            var sortedArray = shellSort.Sort(arr2);
+            shellSort.Print(sortedArray);
             #endregion
         }
     }

@@ -3,7 +3,8 @@
     public class CountSort : Sorting
     {
         /// <summary>
-        /// Max: O(n).
+        /// Index based sort
+        /// O(n)
         /// </summary>
         /// <param name="arr"></param>
         /// <returns></returns>

@@ -3,9 +3,11 @@
     public class BubbleSort : Sorting
     {
         /// <summary>
-        /// Min: O(n) When no swap at start i.e. when list is already sorted.
+        /// Comparison based sort
+        /// Min: O(n) When list is already sorted no swaps are required.
         /// Max: O(n pow 2) When list is decreasing.
-        /// We made it adaptive and stable.
+        /// We made it adaptive and it is stable.
+        /// K passes are beneficial as after K passes you will get K max elements at last.
         /// </summary>
         /// <param name="arr"></param>
         /// <returns></returns>
@@ -14,7 +16,7 @@
             for (int pass = 0; pass < arr.Length - 1; pass++)
             {
                 int flag = 0;
-                //Reduce comparison with every pass.
+                //Reduces comparison and swaps with every pass.
                 for (int index = 0; index < arr.Length - 1 - pass; index++) 
                 {
                     if (arr[index] > arr[index + 1])
